@@ -25,7 +25,7 @@ class SignIn extends Component {
     rememberMe: false
   };
 
-  onInputChangeHandler = event => {
+  onInputChange = event => {
     const { name, value } = event.target;
 
     this.setState({
@@ -33,13 +33,13 @@ class SignIn extends Component {
     });
   }
 
-  onCheckboxChangeHandler = (event, checked) => {
+  onCheckboxChange = (event, checked) => {
     this.setState({
       rememberMe: checked
     });
   }
 
-  onSubmitHandler = event => {
+  onSubmit = event => {
     event.preventDefault();
     const { email, password, rememberMe } = this.state;
 
@@ -63,7 +63,7 @@ class SignIn extends Component {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <form className={classes.form} onSubmit={this.onSubmitHandler}>
+            <form className={classes.form} onSubmit={this.onSubmit}>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="email">Email Address</InputLabel>
                 <Input
@@ -71,7 +71,7 @@ class SignIn extends Component {
                   name="email"
                   autoComplete="email"
                   autoFocus
-                  onChange={this.onInputChangeHandler}
+                  onChange={this.onInputChange}
                 />
               </FormControl>
               <FormControl margin="normal" required fullWidth>
@@ -81,7 +81,7 @@ class SignIn extends Component {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  onChange={this.onInputChangeHandler}
+                  onChange={this.onInputChange}
                 />
               </FormControl>
               <FormControlLabel
@@ -89,7 +89,7 @@ class SignIn extends Component {
                   <Checkbox
                     value="remember"
                     color="primary"
-                    onChange={this.onCheckboxChangeHandler}
+                    onChange={this.onCheckboxChange}
                   />
                 }
                 label="Remember me"

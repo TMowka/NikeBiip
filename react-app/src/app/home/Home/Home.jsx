@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Page from '../../layout/Page/Page';
+
 const home = () => {
   return (
-    <div>
-      HOME
-    </div>
+    <Page>
+      <div>
+        HOME
+      </div>
+    </Page>
   );
 };
 

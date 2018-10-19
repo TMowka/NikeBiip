@@ -24,6 +24,14 @@ const authReducer = (state = initialState, action) => {
       };
     }
 
+    case types.SIGNOUT_SUCCESS: {
+      return {
+        ...state,
+        user: null,
+        error: null
+      };
+    }
+
     case types.FAILURE: {
       return {
         ...state,

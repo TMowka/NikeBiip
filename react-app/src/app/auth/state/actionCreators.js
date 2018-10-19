@@ -9,6 +9,10 @@ export const signInSuccess = user => ({
   payload: user
 });
 
+export const signOutSuccess = () => ({
+  type: types.SIGNOUT_SUCCESS
+});
+
 export const failure = error => ({
   type: types.FAILURE,
   payload: error
