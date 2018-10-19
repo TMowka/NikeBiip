@@ -2,15 +2,33 @@ import types from './types';
 
 const initialState = {
   user: null,
+  pending: false,
   error: null
 };
 
 const authReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case types.LOGIN_SUCCESS: {
+  switch (action.type) {
+    case types.SIGNIN_PENDING: {
       return {
         ...state,
-        user: action.payload
+        pending: true
+      };
+    }
+
+    case types.SIGNIN_SUCCESS: {
+      return {
+        ...state,
+        pending: false,
+        user: action.payload,
+        error: null
+      };
+    }
+
+    case types.FAILURE: {
+      return {
+        ...state,
+        error: action.payload,
+        pending: false
       };
     }
 

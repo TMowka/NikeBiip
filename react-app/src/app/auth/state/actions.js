@@ -1,10 +1,18 @@
 import {
-  loginSuccess
+  signInPending, signInSuccess, failure
 } from './actionCreators';
 
-export const autoLogin = () => {
-  return dispatch => {
-    console.log('autoLogin');
-    dispatch(loginSuccess);
+export const signIn = (email, password/*, rememberMe*/) => {
+  return async (dispatch, getState) => {
+    dispatch(signInPending());
+    const app = getState().app;
+
+    try {
+      const response = await app.auth.signInWithEmailAndPassword(email, password);
+      dispatch(signInSuccess(response.user));
+    } catch (error) {
+      console.warn('[auth - actions]', error);
+      dispatch(failure(error));
+    }
   };
 };
