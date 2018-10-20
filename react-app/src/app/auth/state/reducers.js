@@ -1,7 +1,7 @@
 import types from './types';
 
 const initialState = {
-  user: null,
+  user: true, // test
   pending: false,
   error: null
 };

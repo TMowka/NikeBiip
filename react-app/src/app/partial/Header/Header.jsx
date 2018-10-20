@@ -41,7 +41,7 @@ class Header extends Component {
     const open = Boolean(this.state.anchorEl);
 
     return (
-      <AppBar position="static" className={classes.layout}>
+      <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
           <div className={classes.grow} />
           <Typography variant="h6" className={classes.title}>

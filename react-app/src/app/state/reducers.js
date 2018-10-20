@@ -3,6 +3,10 @@ import types from './types';
 const initialState = {
   auth: null,
   database: null,
+  window: {
+    width: 800,
+    height: 600
+  },
   error: null
 };
 
@@ -14,6 +18,16 @@ const appReducer = (state = initialState, action) => {
         auth: action.payload.auth,
         database: action.payload.db,
         error: null
+      };
+    }
+
+    case types.RESIZE_SUCCESS: {
+      return {
+        ...state,
+        window: {
+          width: action.payload.width,
+          height: action.payload.height
+        }
       };
     }
 

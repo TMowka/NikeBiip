@@ -5,6 +5,11 @@ export const initializeSuccess = (auth, db) => ({
   payload: { auth, db }
 });
 
+export const resizeSuccess = (width, height) => ({
+  type: types.RESIZE_SUCCESS,
+  payload: { width, height }
+});
+
 export const failure = error => ({
   type: types.FAILURE,
   payload: error
