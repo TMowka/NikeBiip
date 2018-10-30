@@ -60,7 +60,7 @@
       ],
       "linebreak-style": [
           2,
-          "windows"
+          "unix"
       ],
       "quotes": [
           2,
